@@ -1,5 +1,7 @@
 package com.example.showcase_soccer_matches_search_kotlin_compose.viewmodels
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.showcase_soccer_matches_search_kotlin_compose.events.MatchesEvents
@@ -24,6 +26,7 @@ import org.typesense.model.SearchResultHit
 import java.time.LocalDateTime
 import kotlin.math.roundToInt
 
+@RequiresApi(Build.VERSION_CODES.O)
 class MatchesViewModel(private val client: Client) : ViewModel() {
     private val _isLoading = MutableStateFlow(true)
     val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
