@@ -14,12 +14,12 @@ fun setupTypesenseClient(): Client {
     nodes.add(
         Node(
             "http",
-            "192.168.10.164", // replace with your wifi IPV4
+            "192.168.10.164", // your Typesense hostname
             "8108"
         )
     )
 
-    val config = Configuration(nodes, Duration.ofSeconds(2), "xyz")
+    val config = Configuration(nodes, Duration.ofSeconds(2), "xyz") //your Typesense API key
 
     return Client(config)
 }
